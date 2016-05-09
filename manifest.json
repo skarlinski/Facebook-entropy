@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+
+  "name": "Facebook Entropy Generator",
+  "description": "Press the button! Get close to your enemies or alienate your friends. Shed your polished facebook ego by randomly liking a third of all posts on your wall. ARE YOU BRAVE ENOUGH TO PRESS THE BUTTON?",
+  "version": "1.0",
+  "background": {
+    "persistent": false,
+    "scripts": ["liker.js"]
+  },
+  "browser_action": {
+
+  },
+  "permissions": [
+    "activeTab",
+    "https://ajax.googleapis.com/"
+  ]
+}
