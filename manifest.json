@@ -10,9 +10,15 @@
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "css": ["liker.css"],
-      "js": ["liker.js"]
+      "css": ["bootstrap.min.css","liker.css"],
+      "js": ["jquery-2.2.3.min.js","bootstrap.min.js","liker.js"]
     }
+  ],
+  
+  "web_accessible_resources": [
+    "Assets/animatedButton/*",
+    "Assets/*",
+    "liker.js"
   ],
   "permissions": [
     "activeTab",
