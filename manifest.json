@@ -14,7 +14,9 @@
       "js": ["jquery-2.2.3.min.js","bootstrap.min.js","liker.js"]
     }
   ],
-  
+  "background":{
+  	"scripts": ["background.js"]
+  },  
   "web_accessible_resources": [
     "Assets/animatedButton/*",
     "Assets/*",

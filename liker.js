@@ -1,16 +1,21 @@
+chrome.runtime.onMessage.addListener(
+   function(request,sender,sendResponse){
+      alert('message recieved');
+      sendResponse('messaged!');
+   }
+);
 // chrome.browserAction.onClicked.addListener(function(){
-// 	openPopup();	
-// })
-openPopup();
+       
+       //openPopup();
 function openPopup(){
 	var overlay = document.createElement('div');
 	overlay.innerHTML = fbLikerGetOverlayMarkup();
-
+	
 	document.body.appendChild(overlay);
 	var submit = document.getElementById('fbLikerSubmit');
 	submit.onclick = fblikerPopupSubmit;
 	//fblikerPopupSubmit();
-}
+ }
 function fblikerPopupSubmit(){
 	alert('liked!');
 	var filters = {"data-testid":'ufi_comment_like_link'};
