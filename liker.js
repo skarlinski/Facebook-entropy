@@ -8,6 +8,9 @@ chrome.runtime.onMessage.addListener(
        
        //openPopup();
 function openPopup(){
+	if( document.getElementById('fbLikerOverlay')) {
+		return false;
+	}
 	var popup = document.createElement('div');
 	popup.id = 'entropy-popup';
 	popup.style.position = 'fixed';
@@ -24,10 +27,30 @@ function openPopup(){
 	document.body.appendChild(popup);
 	var submit = document.getElementById('fbLikerSubmit');
 	submit.onclick = fblikerPopupSubmit;
+	
+	var loadMoreEl = document.getElementById('fbLikerLoadMore');
+	loadMoreEl.onclick = loadMore;
+	
+	loadMore();
 	[...popup.querySelectorAll('.facebookLikerClosePopup')].map((e) => {
 		e.onclick = facebookLikerClosePopup;
 	})
 	//fblikerPopupSubmit();
+ }
+ function loadMore() {
+	const loading = document.getElementById('fbLikerLoading');
+	loading.innerHTML = 'Loading...'
+	window.scrollTo({
+		left: 0,
+		top: document.body.scrollHeight - 100,
+		behavior: "smooth"
+	  }
+	);
+	setTimeout(()=>{
+		var count = document.querySelectorAll('[aria-label="Like"]').length;
+		loading.innerHTML = `This is going to randomly like ${count} posts and comments on your feed. `
+	},2000)
+	
  }
 function facebookLikerClosePopup(){
 	let overlay = document.getElementById('fbLikerOverlay');
@@ -87,13 +110,19 @@ function fbLikerGetPopupMarkup(){
 			   liking a third of all posts on your wall.
 			  </p>
 			  <p>
+			  <b id="fbLikerLoading">
+			  Loading..
+			  </b>
+			  </p>
+			  <p>
 			  <b>ARE YOU BRAVE ENOUGH TO
 			  PRESS THE BUTTON?</b>
 			  </p>
 		      </div>
 			  <div class="modal-footer">
+			  <button id = "fbLikerLoadMore" type="button" style="float:left" class="btn btn-primary">Load More</button>
 			  <button id = "fbLikerSubmit" type="button" class="btn btn-primary">Allow</button>
-		        <button type="button" class="btn btn-secondary facebookLikerClosePopup" data-dismiss="modal" >Close</button>
+		      <button type="button" class="btn btn-secondary facebookLikerClosePopup" data-dismiss="modal" >Close</button>
 				
 				<div style="clear:both"></div>
 		      </div>
