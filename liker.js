@@ -47,10 +47,13 @@ function openPopup(){
 	  }
 	);
 	setTimeout(()=>{
-		var count = document.querySelectorAll('[aria-label="Like"]').length;
+		var count = getLikeButtons().length;
 		loading.innerHTML = `This is going to randomly like ${count} posts and comments on your feed. `
 	},2000)
 	
+ }
+ function getLikeButtons(){
+	return document.querySelectorAll('[aria-label="Like"]')
  }
 function facebookLikerClosePopup(){
 	let overlay = document.getElementById('fbLikerOverlay');
@@ -59,25 +62,17 @@ function facebookLikerClosePopup(){
 	popup.parentElement.removeChild(popup)
 }
 function fblikerPopupSubmit(){
-	alert('liked!');
 	var filters = {"data-testid":'ufi_comment_like_link'};
-	var likeBtnClass = 'LikeLink';
-	var arr = document.getElementsByTagName("a");
+	let count = 0;
+	var arr = [...getLikeButtons()];
 	for (i = 0; i < arr.length; i++) {
 		var randNum = Math.floor(Math.random()*10);
-
-		if(arr[i].className.indexOf(likeBtnClass) > -1){
-	    arr = Array.prototype.slice.call(arr,this)
-	    arr = arr.filter(filterByAttr);
-			// if(randNum >=7){arr[i].click();}
-		 }
-	}
-
-	function filterByAttr(item) {
-	 for(var k in filters) {
-	 	return item.getAttribute(k) == filters[k];
+    	if(randNum >=7){
+			arr[i].click();
+			count++
 		}
 	}
+	alert(`You liked ${count} items!`)
 }
 openPopup()
 fetch(chrome.extension.getURL('Assets/EntropyLogos.png')).then(function(res){
@@ -121,7 +116,7 @@ function fbLikerGetPopupMarkup(){
 		      </div>
 			  <div class="modal-footer">
 			  <button id = "fbLikerLoadMore" type="button" style="float:left" class="btn btn-primary">Load More</button>
-			  <button id = "fbLikerSubmit" type="button" class="btn btn-primary">Allow</button>
+			  <button id = "fbLikerSubmit" type="button" class="btn btn-primary">Like!</button>
 		      <button type="button" class="btn btn-secondary facebookLikerClosePopup" data-dismiss="modal" >Close</button>
 				
 				<div style="clear:both"></div>
