@@ -5,17 +5,17 @@
   "description": "Press the button! Get close to your enemies or alienate your friends. Shed your polished facebook ego by randomly liking a third of all posts on your wall. ARE YOU BRAVE ENOUGH TO PRESS THE BUTTON?",
   "version": "1.0",
   "browser_action": {
-
+    "default_icon": "Assets/EntropyLikeButton.png"
   },
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "css": ["bootstrap.min.css","liker.css"],
-      "js": ["jquery-2.2.3.min.js","bootstrap.min.js","liker.js"]
+      "css": ["bootstrap.min.css","liker.css"]
     }
   ],
   "background":{
-  	"scripts": ["background.js"]
+    "scripts": ["background.js"],
+    "persistant": false
   },  
   "web_accessible_resources": [
     "Assets/animatedButton/*",
@@ -23,7 +23,6 @@
     "liker.js"
   ],
   "permissions": [
-    "activeTab",
-    "https://ajax.googleapis.com/"
+    "activeTab"
   ]
 }

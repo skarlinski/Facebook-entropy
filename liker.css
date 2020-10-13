@@ -1,4 +1,4 @@
-.fbLikerOverlay{
+#fbLikerOverlay{
   position: fixed;
   top: 0;
   left: 0;
@@ -7,7 +7,21 @@
   z-index: 10;
   background-color: rgba(0,0,0,0.5);
 }
-
+#fbLikerModal {
+  outline: 0;
+}
 .fbLikerFloat{
   float:left;
+}
+#entropy-popup .modal-content{
+  border:none;
+}
+#entropy-popup .modal-header{
+  padding:6px;
+}
+#entropy-popup .modal-dialog{
+  max-width: 400px;
+}
+#entropy-popup .close {
+  color:white;
 }
