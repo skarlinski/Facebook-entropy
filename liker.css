@@ -22,6 +22,38 @@
 #entropy-popup .modal-dialog{
   max-width: 400px;
 }
+#entropy-popup{
+  background: white;
+
+}
+#entropy-popup .modal-body{
+  padding-top:15px;
+}
+#entropy-popup .modal-footer{
+  background: #9999993d;
+  padding:10px;
+}
+
+#entropy-popup .modal-footer button{
+  float:right;
+  margin-right:5px;
+  padding: .5em 1em;
+  color:white;
+  border: transparent;
+  background-color: #0078e7;
+  text-decoration: none;
+  border-radius: 2px;
+}
+#entropy-popup .modal-footer button.btn-secondary{
+  background-color: gray;
+}
 #entropy-popup .close {
   color:white;
+  position: absolute;
+    right: 10px;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 0px;
+    margin: 0px;
 }

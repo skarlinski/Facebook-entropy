@@ -74,7 +74,7 @@ function fbLikerGetPopupMarkup(){
 		  <div class="modal-dialog" role="document">
 		    <div class="modal-content">
 		      <div class="modal-header"  style="text-align:left;background-color:#6e84b5">
-		        <button type="button" onclick="facebookLikerClosePopup" class="close facebookLikerClosePopup" data-dismiss="modal" aria-label="Close">
+		        <button type="button" onclick="facebookLikerClosePopup" class="close facebookLikerClosePopup" style="cursor:pointer" data-dismiss="modal" aria-label="Close">
 		          <span aria-hidden="true">&times;</span>
 		        </button>
 		        <h4 class="modal-title" style="color:white" id="myModalLabel">Facebook Entropy Generator</h4>
@@ -91,9 +91,11 @@ function fbLikerGetPopupMarkup(){
 			  PRESS THE BUTTON?</b>
 			  </p>
 		      </div>
-		      <div class="modal-footer">
+			  <div class="modal-footer">
+			  <button id = "fbLikerSubmit" type="button" class="btn btn-primary">Allow</button>
 		        <button type="button" class="btn btn-secondary facebookLikerClosePopup" data-dismiss="modal" >Close</button>
-		        <button id = "fbLikerSubmit" type="button" class="btn btn-primary">Alllow</button>
+				
+				<div style="clear:both"></div>
 		      </div>
 		    </div>
 		  </div>
