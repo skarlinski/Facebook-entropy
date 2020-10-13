@@ -47,7 +47,7 @@ function openPopup(){
 	  }
 	);
 	setTimeout(()=>{
-		var count = getLikeButtons().length;
+		var count = Math.floor(getLikeButtons().length / 3);
 		loading.innerHTML = `This is going to randomly like ${count} posts and comments on your feed. `
 	},2000)
 	
