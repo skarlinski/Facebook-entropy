@@ -5,6 +5,7 @@
 // 	});
 // })
 chrome.browserAction.onClicked.addListener(function(activeTab) {
-
-    chrome.tabs.executeScript(null, {file: "liker.js"});
+    if(activeTab.url && activeTab.url.indexOf('facebook.com') > -1) {
+        chrome.tabs.executeScript(null, {file: "liker.js"});
+    }
 });

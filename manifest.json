@@ -4,6 +4,8 @@
   "name": "Facebook Entropy Generator",
   "description": "Press the button! Get close to your enemies or alienate your friends. Shed your polished facebook ego by randomly liking a third of all posts on your wall. ARE YOU BRAVE ENOUGH TO PRESS THE BUTTON?",
   "version": "1.0",
+  "icons": { 
+   "128": "Assets/EntropyLogos128.png" },
   "browser_action": {
     "default_icon": "Assets/EntropyLikeButton.png"
   },
