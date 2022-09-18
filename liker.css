@@ -27,7 +27,7 @@
 
 }
 #entropy-popup .modal-body{
-  padding-top:15px;
+  padding:15px 15px 0 15px;
 }
 #entropy-popup .modal-footer{
   background: #9999993d;
